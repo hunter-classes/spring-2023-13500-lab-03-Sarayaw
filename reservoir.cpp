@@ -48,9 +48,6 @@ double get_min_east() {
   std::string trash;
   getline(fin, trash);
 
-  std::string user_date;
-  std::cout << "Enter date in 2018: ";
-  std::cin >> user_date;
 
   std::string date;
   double east_storage = 0.0;
@@ -82,10 +79,6 @@ double get_max_east() {
 
   std::string trash;
   getline(fin, trash);
-
-  std::string user_date;
-  std::cout << "Enter date in 2018: ";
-  std::cin >> user_date;
 
   std::string date;
   double east_storage = 0.0;
