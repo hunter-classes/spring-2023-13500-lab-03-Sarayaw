@@ -23,9 +23,9 @@ double get_east_storage(std::string date){
 
 
   std::string junk;       
-  getline(fin, junk); 
+  std::getline(fin, junk); 
 
- 
+ std::string date;
   while(fin >> fileDate >> eastSt >> eastEl >> westSt >> westEl) {
 
    fin.ignore(INT_MAX, '\n');
@@ -45,8 +45,8 @@ double get_min_east() {
         exit(1); 
     }
 
-  std::string trash;
-  getline(fin, trash);
+  std::string junk;
+  getline(fin, junk);
 
 
   std::string date;
