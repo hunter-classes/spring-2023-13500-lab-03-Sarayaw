@@ -7,7 +7,8 @@
 #include "reservoir.h"
 
 
-double get_east_storage(std::string date){
+double get_east_storage(std::string date)
+{
   string fileDate;
   double eastSt;
   double eastEl;
