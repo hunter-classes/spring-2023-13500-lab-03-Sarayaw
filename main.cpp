@@ -1,4 +1,14 @@
+/*
+Author: Saraya Weerasinghe
+Course: CSCI-135
+Instructor:  Mike Zamansky
+Assignment: Lab 3
 
+Lab A: Prints out East bin storage on a specific date
+Lab B:Shows the min and max of East bin storage
+Lab C: Shows if East or West was tired that day or equal
+Lab D: Print out the West basin elevation for all days in the interval in reverse chronological order
+*/
 
 #include <iostream>
 #include <string>
