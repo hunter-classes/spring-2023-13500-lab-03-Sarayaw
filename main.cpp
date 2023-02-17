@@ -1,58 +1,31 @@
 
+
 #include <iostream>
-#include <cstdlib>
-#include <fstream>
 #include <string>
+#include "reservoir.h"
+#include "reverseorder.h"
 
-std::string compare_basins(std::string date) {
-  std::ifstream fin("Current_Reservoir_Levels.tsv");
-    if (fin.fail()) {
-        std::cerr << "File cannot be opened for reading." << std::endl;
-        exit(1); 
-    }
+int main()
+{
+  //LAB A
+  std::cout << "First Test: (08/27/2018)\n" << get_east_storage("08/27/2018") << " billion gallons" << std::endl;
+  std::cout << "Second Test: (03/23/2018)\n" << get_east_storage("03/23/2018") << " billion gallons" << std::endl;
+  std::cout << std::endl;
 
-  std::string trash;
-  getline(fin, trash);
+  //LAB B
+  std::cout << "Minimum storage: " << get_min_east() << " billion gallons" << std::endl;
+  std::cout << "Maximum storage: " << get_max_east() << " billion gallons" << std::endl;
+  std::cout << std::endl;
+  
+  //LAB C
+  std::cout << "First Test: (07/13/2018)\n" << compare_basins("07/13/2018") << std::endl;
+  std::cout << "Second Test: (11/06/2018)\n" << compare_basins("11/06/2018") << std::endl;
+ std:: cout << std::endl;
 
-  std::string user_date;
-  std::cout << "Enter date in 2018: ";
-  std::cin >> user_date;
-
-  std::string date;
-  double east_storage = 0.0;
-
-  do {
-    fin >> date;
-  }
-  while (date.compare(user_date) != 0);
-
-  fin >> east_storage;
-
-  double west_storage = 0.0;
-  while (fin >> date) {
-    fin >> west_storage;
-  }
-
-  if (east_storage > west_storage) {
-    return "East";
-  } else if (east_storage < west_storage) {
-    return "West";
-  } else {
-    return "Equal";
-  }
-}
-
-int main() {
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-01-01") << std::endl;
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-02-01") << std::endl;
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-03-01") << std::endl;
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-04-01") << std::endl;
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-05-01") << std::endl;
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-06-01") << std::endl;
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-07-01") << std::endl;
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-08-01") << std::endl;
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-09-01") << std::endl;
-  std::cout << "The comparison of East and West basin storage on " << compare_basins("2018-10-01") << std::endl;
-
+  //LAB D
+  std::cout << "First Test: (04/09/2018 - 10/23/2018)\n";
+  reverse_order("04/09/2018", "10/23/2018");
+ std:: cout << "Second Test: (05/26/2018 - 06/02/2018)\n";
+  reverse_order("05/26/2018", "09/16/2018");
   return 0;
 }
